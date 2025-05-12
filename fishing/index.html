@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fishing Adventures</title>
+
+  <script>
+    const lang = new URLSearchParams(window.location.search).get('lang');
+    window.liveSettings = {
+      api_key: "<your-transifex-live-api-key>",
+      detectlang: !lang,
+      dynamic: true
+    };
+  </script>
+
+  <script src="//cdn.transifex.com/live.js"></script>
+
+  <script>
+    if (lang) {
+      Transifex.live.onReady(function () {
+        Transifex.live.translateTo(lang);
+      });
+    }
+  </script>
+</head>
+<body>
+  <h1>Fishing Adventures</h1>
+  <p>Learn how to fish in the wild!</p>
+</body>
+</html>
