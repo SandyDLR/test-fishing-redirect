@@ -16,17 +16,14 @@
   <p>This is the fishing content.</p>
 
   <script>
-    function getLangParam() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get('lang');
-    }
-
     window.addEventListener('load', function () {
-      const lang = getLangParam();
-      if (lang) {
-        Transifex.live.translateTo(lang);
+      // Check if the path is /pescar or /fishing
+      const path = window.location.pathname;
+
+      if (path === '/pescar') {
+        Transifex.live.translateTo('es_US'); // Set language to Spanish
       } else {
-        Transifex.live.translateTo('en'); // default to English if no lang param
+        Transifex.live.translateTo('en'); // Default to English
       }
     });
   </script>

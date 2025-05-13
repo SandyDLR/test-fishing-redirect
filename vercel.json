@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/pescar",
-      "destination": "/fishing?lang=es_US"
+      "destination": "/fishing"
     }
   ]
 }
