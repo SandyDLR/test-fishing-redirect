@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,11 +16,17 @@
   <p>This is the fishing content.</p>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const urlParams = new URLSearchParams(window.location.search);
-      const lang = urlParams.get("lang");
-      if (!lang) {
-        Transifex.live.translateTo('en');
+    function getLangParam() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('lang');
+    }
+
+    window.addEventListener('load', function () {
+      const lang = getLangParam();
+      if (lang) {
+        Transifex.live.translateTo(lang);
+      } else {
+        Transifex.live.translateTo('en'); // default to English if no lang param
       }
     });
   </script>
