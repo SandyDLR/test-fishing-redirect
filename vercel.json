@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/es",
+      "destination": "/fishing"
+    },
+    {
+      "source": "/en",
+      "destination": "/fishing"
+    }
+  ]
+}
